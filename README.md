@@ -12,7 +12,12 @@ $ docker-machine create --driver virtualbox dev
 docker run -it -d -p 2222:22 -p 8080:80 --name web_base -h webm01 centos6:web1.0 /usr/bin/supervisord 
 
 
+
+
 [メモ]
+
 ここを書き換えれば固定化できるか？(試す予定)
+
 docker-machineのconfig設定
+
 vim ~/.docker/machine/machines/dev/config.json
