@@ -96,8 +96,8 @@ RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key
 # Supervisor をインストールする
 RUN easy_install supervisor
 
-# sshd: 22, httpd: 80 を公開する
-EXPOSE 22 80
+# sshd: 22, mariadb: 3306 を公開する
+EXPOSE 22 3306
 
 # Supervisor を起動する
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.conf"]
