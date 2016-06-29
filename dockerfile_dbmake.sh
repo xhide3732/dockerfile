@@ -73,7 +73,10 @@ RUN echo "export PS1='[\u@\h \W]# '" >> /etc/profile
 
 # centos 日本語設定
 RUN yum -y groupinstall "Japanese Support"
+RUN yum -y reinstall glibc-common
 RUN sed -ri 's/en_US/ja_JP/' /etc/sysconfig/i18n
+RUN localedef -v -c -i ja_JP -f UTF-8 ja_JP.UTF-8; echo "";
+ENV LANG=ja_JP.UTF-8
 
 # 日本時刻設定
 RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
